@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
 
-import { COLORS, QUERIES, WEIGHTS } from '../../constants'
+import { QUERIES, WEIGHTS } from '../../constants'
 
 import UnstyledButton from '../UnstyledButton'
 import Icon from '../Icon'
