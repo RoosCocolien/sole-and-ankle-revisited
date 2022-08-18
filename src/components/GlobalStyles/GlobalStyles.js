@@ -77,6 +77,7 @@ html {
   --color-gray-500: hsl(196deg 4% 60%);
   --color-gray-700: hsl(220deg 5% 40%);
   --color-gray-900: hsl(220deg 3% 20%);
+  --color-backdrop: hsl(220deg 5% 40% / 0.8);
   --color-primary: hsl(340deg, 65%, 47%);
   --color-secondary: hsl(220deg, 60%, 63%);
 
