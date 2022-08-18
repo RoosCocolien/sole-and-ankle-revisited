@@ -15,8 +15,8 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
   }
 
   return (
-    <Overlay>
-      <Content>
+    <Overlay isOpen={isOpen} onDismiss={onDismiss}>
+      <Content aria-label='Menu'>
         <UnstyledButton>
           <Icon onClick={onDismiss} id={'close'} strokeWidth={2}>
             Dismiss menu
