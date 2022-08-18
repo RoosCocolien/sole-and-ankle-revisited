@@ -11,11 +11,6 @@ import Icon from '../Icon'
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false)
 
-  // For our mobile hamburger menu, we'll want to use a button
-  // with an onClick handler, something like this:
-  //
-  // <button onClick={() => setShowMobileMenu(true)}>
-
   return (
     <header>
       <SuperHeader />
@@ -52,6 +47,46 @@ const Header = () => {
   )
 }
 
+const SuperHeaderComponent = styled.div`
+  display: none;
+  border-bottom: 2px solid var(--color-gray-700);
+
+  @media ${QUERIES.tabletAndLess} {
+    display: block;
+  }
+`
+
+const MainHeader = styled.div`
+  display: flex;
+  align-items: baseline;
+  padding: 18px 32px;
+  height: 72px;
+  border-bottom: 1px solid var(--color-gray-300);
+`
+
+const Nav = styled.nav`
+  display: flex;
+  gap: clamp(1rem, 4.9vw - 1rem, 3rem);
+  margin: 0px 48px;
+  overflow: auto;
+
+  @media ${QUERIES.tabletAndLess} {
+    display: none;
+  }
+`
+
+const NavLink = styled.a`
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-gray-900);
+  font-weight: ${WEIGHTS.medium};
+
+  &:first-of-type {
+    color: var(--color-secondary);
+  }
+`
+
 const MobileNav = styled.nav`
   display: none;
 
@@ -68,47 +103,8 @@ const MobileNav = styled.nav`
   }
 `
 
-const SuperHeaderComponent = styled.div`
-  display: none;
-  border-bottom: 2px solid ${COLORS.gray[700]};
-
-  @media ${QUERIES.tabletAndLess} {
-    display: block;
-  }
-`
-
-const MainHeader = styled.div`
-  display: flex;
-  align-items: baseline;
-  padding: 18px 32px;
-  height: 72px;
-  border-bottom: 1px solid ${COLORS.gray[300]};
-`
-
-const Nav = styled.nav`
-  display: flex;
-  gap: 48px;
-  margin: 0px 48px;
-
-  @media ${QUERIES.tabletAndLess} {
-    display: none;
-  }
-`
-
 const Side = styled.div`
   flex: 1;
-`
-
-const NavLink = styled.a`
-  font-size: 1.125rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: ${COLORS.gray[900]};
-  font-weight: ${WEIGHTS.medium};
-
-  &:first-of-type {
-    color: ${COLORS.secondary};
-  }
 `
 
 export default Header
