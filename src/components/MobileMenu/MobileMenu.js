@@ -42,19 +42,23 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
 
 const Overlay = styled(DialogOverlay)`
   position: fixed;
-  width: 300px;
   top: 0;
   right: 0;
+  left: 0;
   bottom: 0;
-  background: var(--color-white);
-  padding: 32px 22px;
+  background: hsla(220, 5%, 40%, 0.8);
+  display: flex;
+  justify-content: flex-end;
 `
 
 const Content = styled(DialogContent)`
+  padding: 32px 22px;
   display: flex;
+  width: 300px;
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
+  background: var(--color-white);
 `
 
 const Nav = styled.nav`
