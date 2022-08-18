@@ -15,10 +15,12 @@ const ShoeIndex = ({ sortId, setSortId }) => {
       <MainColumn>
         <Header>
           <Title>Running</Title>
-          <Select label='Sort' value={sortId} onChange={(ev) => setSortId(ev.target.value)}>
-            <option value='newest'>Newest Releases</option>
-            <option value='price'>Price</option>
-          </Select>
+          <SelectWrapper>
+            <Select label='Sort' value={sortId} onChange={(ev) => setSortId(ev.target.value)}>
+              <option value='newest'>Newest Releases</option>
+              <option value='price'>Price</option>
+            </Select>
+          </SelectWrapper>
         </Header>
         <Spacer size={32} />
         <ShoeGrid />
@@ -45,6 +47,12 @@ const Wrapper = styled.div`
   @media ${QUERIES.tabletAndLess} {
     flex-direction: column-reverse;
     gap: 8px;
+  }
+`
+
+const SelectWrapper = styled.div`
+  @media ${QUERIES.phoneAndLess} {
+    display: none;
   }
 `
 
